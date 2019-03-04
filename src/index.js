@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 // Components
 import App from './components/App'
 
-// Redux 
+// Redux
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducers from './reducers/reducer'
@@ -12,5 +12,5 @@ import reducers from './reducers/reducer'
 const store = createStore(reducers)
 
 ReactDOM.render(<Provider store={store}>
-                  <App />
-                </Provider>, document.getElementById('root'))
+  <App />
+</Provider>, document.getElementById('root'))
