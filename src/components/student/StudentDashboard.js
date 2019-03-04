@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import StudentAgenda from './StudentAgenda'
+import RRTable from './RRTable'
 
 export default class StudentDashboard extends Component {
   render () {
@@ -10,6 +11,10 @@ export default class StudentDashboard extends Component {
           <StudentAgenda />
         </div>
 
+        <br />
+        <div>
+          <RRTable />
+        </div>
       </div>
     )
   }
