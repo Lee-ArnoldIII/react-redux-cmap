@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import RosterTable from './RosterTable'
+import AgendaForm from './AgendaForm'
 
 export default class TeacherDashboard extends Component {
   render() {
     return (
-      <div>
-        Teacher Dash
+      <div className='columns'>
+        <RosterTable />
+        <AgendaForm />
       </div>
     )
   }
