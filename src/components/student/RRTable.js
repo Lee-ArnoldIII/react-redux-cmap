@@ -4,16 +4,27 @@ class RRTable extends Component {
   render () {
     return (
       <div>
-        <table class='table'>
-          <th>
-              sksk
-          </th>
+        <table className='table is-striped'>
+          <thead>
+            <th>#</th>
+            <th>Name</th>
+            <th>Status</th>
+          </thead>
           <tbody>
-              blah
             <tr>
-              <td>
-                bla
-              </td>
+              <td>0</td>
+              <td>Erica</td>
+              <td>In Restroom</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Sarah</td>
+              <td>Waiting</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mark</td>
+              <td>Waiting</td>
             </tr>
           </tbody>
         </table>
