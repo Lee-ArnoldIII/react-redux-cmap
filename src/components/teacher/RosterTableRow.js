@@ -8,12 +8,12 @@ const RosterTableRow = () => {
         <td>Johnny Bravo</td> 
         <td>Present</td> 
         <td>
-          <div class="control">
-            <label class="radio">
+          <div className="control">
+            <label className="radio">
               <input type="radio" name="answer"/>
               &nbsp;&nbsp;Yes
             </label> &nbsp;
-            <label class="radio">
+            <label className="radio">
               <input type="radio" name="answer"/>
               &nbsp;&nbsp;No
             </label>
@@ -25,12 +25,12 @@ const RosterTableRow = () => {
         <td>Johnny Bravo</td> 
         <td>Present</td> 
         <td>
-          <div class="control">
-            <label class="radio">
+          <div className="control">
+            <label className="radio">
               <input type="radio" name="answer"/>
               &nbsp;&nbsp;Yes
             </label> &nbsp;
-            <label class="radio">
+            <label className="radio">
               <input type="radio" name="answer"/>
               &nbsp;&nbsp;No
             </label>
@@ -42,12 +42,12 @@ const RosterTableRow = () => {
         <td>Johnny Bravo</td> 
         <td>Present</td> 
         <td>
-          <div class="control">
-            <label class="radio">
+          <div className="control">
+            <label className="radio">
               <input type="radio" name="answer"/>
               &nbsp;&nbsp;Yes
             </label> &nbsp;
-            <label class="radio">
+            <label className="radio">
               <input type="radio" name="answer"/>
               &nbsp;&nbsp;No
             </label>

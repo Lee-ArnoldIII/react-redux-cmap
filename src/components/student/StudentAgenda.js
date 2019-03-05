@@ -43,10 +43,4 @@ const mapStateToProps = (state) => ({
 
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  addTodo: (todoText) => dispatch({ type: 'ADD_TODO', text: todoText }),
-  toggleTodo: (idx) => dispatch({ type: 'TOGGLE_TODO', idx: idx })
-
-})
-
 export default connect(mapStateToProps)(StudentAgenda)

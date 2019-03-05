@@ -7,10 +7,10 @@ const initialState = {
     { name: 'Lee Arnold', attendance: true }
   ],
   agenda: {
-    warmUp: { task: 'Key Question', done: false },
-    lesson: { task: 'Causes of WWII', done: false },
-    activity: { task: 'Think, Pair, Share and Quick Write', done: false },
-    exit: { task: 'Exit Ticket', done: false }
+    warmUp: { task: 'a', done: false },
+    lesson: { task: 'a', done: false },
+    activity: { task: 'a\na\na', done: false },
+    exit: { task: 'a', done: false }
   },
   restroom: false
 }
@@ -18,9 +18,21 @@ const initialState = {
 const agendaReducer = (state = initialState, action) => {
   // Add more cases (delete, toggleRR, adding student, etc..)
   // Or add different reducers (student/attendance, restroom)
+  console.log('action in reducer', action)
+  const { warmUpText, lessonText, activityText, exitText } = action
+
   switch (action.type) {
     case 'ADD_AGENDA':
-      return state
+      return {
+        ...state, 
+        agenda: { 
+          warmUp: { task: warmUpText, done: false },
+          lesson: { task: lessonText, done: false },
+          activity: { task: activityText, done: false },
+          exit: { task: exitText, done: false }
+        }
+      }
+   
     default:
       return state
   }
