@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class StudentAgenda extends Component {
   constructor (props) {
@@ -10,22 +11,23 @@ class StudentAgenda extends Component {
   }
 
   render () {
+    console.log(this.props.item)
     return (
       <div className='container'>
         <div className='content' id='warmUP'>
-        Warm-up:
+        Warm-up: {this.props.warmUp}
         </div>
 
         <div className='content' id='lesson'>
-        Today's lesson:
+        Today's lesson: {this.props.lesson}
         </div>
 
         <div className='content' id='activity'>
-        Today's activity:
+        Today's activity: {this.props.activity}
         </div>
 
         <div className='content' id='exit'>
-        Exit:
+        Exit: {this.props.exit}
         </div>
       </div>
 
@@ -33,4 +35,18 @@ class StudentAgenda extends Component {
   }
 }
 
-export default StudentAgenda
+const mapStateToProps = (state) => ({
+  warmUp: state.agenda.warmUp.task,
+  lesson: state.agenda.lesson.task,
+  activity: state.agenda.activity.task,
+  exit: state.agenda.exit.task
+
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  addTodo: (todoText) => dispatch({ type: 'ADD_TODO', text: todoText }),
+  toggleTodo: (idx) => dispatch({ type: 'TOGGLE_TODO', idx: idx })
+
+})
+
+export default connect(mapStateToProps)(StudentAgenda)
