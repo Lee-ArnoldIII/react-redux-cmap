@@ -7,10 +7,10 @@ const initialState = {
     { name: 'Lee Arnold', attendance: true }
   ],
   agenda: {
-    warmUp: { task: '', done: false },
-    lesson: { task: '', done: false },
-    activity: { task: '', done: false },
-    exit: { task: '', done: false }
+    warmUp: { task: 'Key Question', done: false },
+    lesson: { task: 'Causes of WWII', done: false },
+    activity: { task: 'Think, Pair, Share and Quick Write', done: false },
+    exit: { task: 'Exit Ticket', done: false }
   },
   restroom: false
 }
