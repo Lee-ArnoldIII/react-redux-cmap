@@ -1,59 +1,22 @@
 import React from 'react'
+import RosterTableRestroomRequest from './RosterTableRestroomRequest'
+import RosterTableQuestion from './RosterTableQuestion'
 
-const RosterTableRow = () => {
+const RosterTableRow = ({ data, index, name, 
+                          requestRR, handleNoRequest, 
+                          handleYesRequest, restroom
+                        }) => {
   return (
     <React.Fragment>
-      <tr>
-        <th>1</th>
-        <td>Johnny Bravo</td>
-        <td>Present</td>
-        <td>
-          <div className='control'>
-            <label className='radio'>
-              <input type='radio' name='answer' />
-              &nbsp;&nbsp;Yes
-            </label> &nbsp;
-            <label className='radio'>
-              <input type='radio' name='answer' />
-              &nbsp;&nbsp;No
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>1</th>
-        <td>Johnny Bravo</td>
-        <td>Present</td>
-        <td>
-          <div className='control'>
-            <label className='radio'>
-              <input type='radio' name='answer' />
-              &nbsp;&nbsp;Yes
-            </label> &nbsp;
-            <label className='radio'>
-              <input type='radio' name='answer' />
-              &nbsp;&nbsp;No
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>1</th>
-        <td>Johnny Bravo</td>
-        <td>Present</td>
-        <td>
-          <div className='control'>
-            <label className='radio'>
-              <input type='radio' name='answer' />
-              &nbsp;&nbsp;Yes
-            </label> &nbsp;
-            <label className='radio'>
-              <input type='radio' name='answer' />
-              &nbsp;&nbsp;No
-            </label>
-          </div>
-        </td>
-      </tr>
+    
+      {data.question.hasQuestion ? 
+                  <RosterTableQuestion 
+                      text={data.question.text}/> : <td></td>}
+      {restroom ? <RosterTableRestroomRequest 
+                      requestRR={requestRR}
+                      handleNoRequest={handleNoRequest}
+                      handleYesRequest={handleYesRequest}
+                      />: null}
     </React.Fragment>
   )
 }
