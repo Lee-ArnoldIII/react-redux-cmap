@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import RosterTable from './RosterTable'
 import AgendaForm from './AgendaForm'
-import { connect } from 'tls';
 
 class TeacherDashboard extends Component {
-  render() {
+  render () {
     return (
       <div className='columns'>
         <RosterTable />
@@ -13,7 +12,5 @@ class TeacherDashboard extends Component {
     )
   }
 }
-
-
 
 export default TeacherDashboard
