@@ -1,13 +1,13 @@
 // Populate with temporary data
 const initialState = {
   student: [
-    { name: 'Johnny Bravo', attendance: true },
-    { name: 'Suzy Cue', attendance: true },
-    { name: 'Audy Arandela', attendance: false },
-    { name: 'Lee Arnold', attendance: true }
+    { name: 'Johnny Bravo', attendance: true, question: true },
+    { name: 'Suzy Cue', attendance: true, question: true },
+    { name: 'Audy Arandela', attendance: false, question: false },
+    { name: 'Lee Arnold', attendance: true, question: false }
   ],
   agenda: {
-    warmUp: { task: 'a', done: false },
+    warmUp: { task: '', done: false },
     lesson: { task: 'a', done: false },
     activity: { task: 'a\na\na', done: false },
     exit: { task: 'a', done: false }
@@ -24,15 +24,15 @@ const agendaReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_AGENDA':
       return {
-        ...state, 
-        agenda: { 
+        ...state,
+        agenda: {
           warmUp: { task: warmUpText, done: false },
           lesson: { task: lessonText, done: false },
           activity: { task: activityText, done: false },
           exit: { task: exitText, done: false }
         }
       }
-   
+
     default:
       return state
   }
