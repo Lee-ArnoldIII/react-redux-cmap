@@ -3,17 +3,26 @@ import StudentAgenda from './StudentAgenda'
 import RRTable from './RRTable'
 import Requests from './Requests.js'
 
-export default class StudentDashboard extends Component {
+class StudentDashboard extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+
+    }
+  }
+
   render () {
     return (
       <div>
         <div className='columns'>
-          <div className='column'>
+          <div className='column is-half'>
             <h2>Today's Agenda: </h2> <br />
             <StudentAgenda />
           </div>
           <div className='column'>
             <Requests />
+
           </div>
         </div>
 
@@ -25,3 +34,5 @@ export default class StudentDashboard extends Component {
     )
   }
 }
+
+export default StudentDashboard

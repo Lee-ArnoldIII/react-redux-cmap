@@ -16,6 +16,9 @@ class StudentAgenda extends Component {
       <div className='container'>
         <div className='content' id='warmUP'>
         Warm-up: {this.props.warmUp}
+          <label class='checkbox'>
+            <input type='checkbox' /> Done
+          </label>
         </div>
 
         <div className='content' id='lesson'>
