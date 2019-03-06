@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RosterTableRow from './RosterTableRow'
 
+
 class RosterTable extends Component {
   constructor (props) {
     super(props)
@@ -11,6 +12,7 @@ class RosterTable extends Component {
     }
     this.handleYesRequest = this.handleYesRequest.bind(this)
     this.handleNoRequest = this.handleNoRequest.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleYesRequest (evt) {
@@ -44,25 +46,28 @@ class RosterTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {/* <RosterTableRow /> */}
-            <tr>
-              <th>1</th>
-              <td>Johnny Bravo</td>
-              <td>Present</td>
-              <td>
-                <form className='control'>
-                  <label className='radio'>
-                    <input type='radio' name='answer' value={this.state.requestRR} onChange={this.handleYesRequest} />
-              &nbsp;&nbsp;Yes
-                  </label>
-                  <label className='radio'>
-                    <input type='radio' name='answer' value={this.state.requestRR} onChange={this.handleNoRequest} />
-              &nbsp;&nbsp;No
-                  </label>
-                  &nbsp;<a className='button is-small is-rounded'>Submit</a>
-                </form>
-              </td>
-            </tr>
+            
+           {this.props.student.map((data, index) => {
+             return (
+
+              data.attendance ? <tr key={index}>
+                                  <th>{index + 1}</th>
+                                  <td>{data.name}</td>
+                                  <RosterTableRow
+                                    data={data}
+                                    requestRR={this.state.requestRR}
+                                    handleNoRequest={this.handleNoRequest}
+                                    handleYesRequest={this.handleYesRequest}
+                                    restroom={this.props.restroom}/>
+                                  </tr> 
+                                  : null
+
+                                 
+            )
+             
+             
+           })}
+           
           </tbody>
         </table>
       </div>
@@ -70,11 +75,12 @@ class RosterTable extends Component {
   }
 }
 
-const mapStateToProps = (state, index) => ({
-  name: state.student[index].name,
-  attendance: state.student[index].attendance,
-  question: state.student[index].question
-})
+const mapStateToProps = (state, index) => {
+  return {
+    student: state.student,
+    restroom: state.restroom
+  }
+}
 
 const mapDispatchToProps = (dispatch) => ({
 
