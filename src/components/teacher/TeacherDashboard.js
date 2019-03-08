@@ -5,7 +5,7 @@ import AgendaForm from './AgendaForm'
 class TeacherDashboard extends Component {
   render () {
     return (
-      <div className='columns'>
+      <div className='columns' id='teacher'>
         <RosterTable />
         <AgendaForm />
       </div>

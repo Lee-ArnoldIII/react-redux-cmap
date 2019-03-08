@@ -1,24 +1,40 @@
-import React from 'react'
 import RosterTableRestroomRequest from './RosterTableRestroomRequest'
 import RosterTableQuestion from './RosterTableQuestion'
 
-const RosterTableRow = ({ data, index, name, 
-                          requestRR, handleNoRequest, 
-                          handleYesRequest, restroom
-                        }) => {
-  return (
-    <React.Fragment>
-    
-      {data.question.hasQuestion ? 
-                  <RosterTableQuestion 
-                      text={data.question.text}/> : <td></td>}
-      {restroom ? <RosterTableRestroomRequest 
-                      requestRR={requestRR}
-                      handleNoRequest={handleNoRequest}
-                      handleYesRequest={handleYesRequest}
-                      />: null}
-    </React.Fragment>
-  )
-}
+import React, { Component } from 'react'
 
-export default RosterTableRow
+export default class RosterTableRow extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+
+    }
+  }
+
+  componentDidUpdate (prevProps) {
+    console.log('componentdidUpdate')
+    console.log('prevProps', prevProps)
+  }
+
+  render () {
+    const { data, index, name,
+      requestRR, handleNoRequest,
+      handleYesRequest, restroom
+    } = this.props
+    return (
+      <React.Fragment>
+        {data.question.hasQuestion
+          ? <RosterTableQuestion
+            text={data.question.text}
+            index={index}
+            name={name} /> : <td />}
+        {restroom ? <RosterTableRestroomRequest
+          requestRR={requestRR}
+          handleNoRequest={handleNoRequest}
+          handleYesRequest={handleYesRequest}
+        /> : null}
+      </React.Fragment>
+    )
+  }
+}

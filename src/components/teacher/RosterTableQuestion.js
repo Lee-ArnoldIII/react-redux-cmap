@@ -1,29 +1,53 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import Modal from './Modal'
 
-const RosterTableQuestion = ({ text }) => {
-  return (
-    <React.Fragment>
-      <td>
-          <button class="button is-danger is-small modal-button" data-target="modal-ter" aria-haspopup="true">question</button>
-      <div class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Modal title</p>
-            <button class="delete" aria-label="close"></button>
-          </header>
-          <section class="modal-card-body">
-            {text}
-          </section>
-          <footer class="modal-card-foot">
-            <button class="button is-success">Save changes</button>
-            <button class="button">Cancel</button>
-          </footer>
-        </div>
-      </div>
-      </td>
-    </React.Fragment>
-  )
+class RosterTableQuestion extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      showModal: false
+    }
+    this.handleOpenModal = this.handleOpenModal.bind(this)
+    this.handleCloseModal = this.handleCloseModal.bind(this)
+    this.handleAnsweredModal = this.handleAnsweredModal.bind(this)
+  }
+
+  handleOpenModal () {
+    this.setState({ showModal: true })
+  }
+
+  handleCloseModal () {
+    this.setState({ showModal: false })
+  }
+
+  handleAnsweredModal (index) {
+    this.setState({ showModal: false })
+    this.props.answered(false, this.props.index)
+  }
+
+  componentDidUpdate (prevProps) {
+    console.log('componentdidUpdate')
+    console.log('prevProps', prevProps)
+  }
+
+  render () {
+    return (
+      <React.Fragment>
+        <td>
+          <button onClick={this.handleOpenModal} class='button is-danger is-small modal-button' data-target='modal-ter' aria-haspopup='true'>Question</button>
+          {this.state.showModal ? <Modal text={this.props.text}
+            name={this.props.name}
+            close={this.handleCloseModal}
+            answeredBtn={this.handleAnsweredModal} /> : null}
+        </td>
+      </React.Fragment>
+    )
+  }
 }
 
-export default RosterTableQuestion
+const mapDispatchToProps = (dispatch) => ({
+  answered: (answered, index) => dispatch({ type: 'DELETE_QUESTION', answered, index })
+})
+
+export default connect(null, mapDispatchToProps)(RosterTableQuestion)
