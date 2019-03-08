@@ -15,15 +15,15 @@ class StudentDashboard extends Component {
   render () {
     return (
       <div>
-        <div className='columns'>
+        <div className='sections $section-padding-medium'>
           <div className='column is-half'>
             <h2>Today's Agenda: </h2> <br />
             <StudentAgenda />
-          </div>
-          <div className='column'>
+            <br />
             <Requests />
 
           </div>
+          <div className='column' />
         </div>
 
         <br />

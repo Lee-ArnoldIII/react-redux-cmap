@@ -12,7 +12,6 @@ const initialState = {
     lesson: { task: 'a', done: false },
     activity: { task: 'a\na\na', done: false },
     exit: { task: 'a', done: false }
-  }
 }
 
 const reducer = (state = initialState, action) => {
@@ -42,5 +41,6 @@ const reducer = (state = initialState, action) => {
       return state
   }
 }
+
 
 export default reducer
