@@ -13,24 +13,28 @@ class StudentAgenda extends Component {
   render () {
     console.log(this.props.item)
     return (
-      <div className='container'>
-        <div className='content' id='warmUP'>
-        Warm-up: {this.props.warmUp}
-          <label className='checkbox'>
-            <input type='checkbox' /> Done
-          </label>
-        </div>
+      <div className='container is-fluid'>
+        <div className='box'>
+          <div className='box' id='warmUP'>
+        W-U: {this.props.warmUp}
+            <div className=''>
+              <label className='checkbox'>
+                <input type='checkbox' /> Done
+              </label>
+            </div>
+          </div>
 
-        <div className='content' id='lesson'>
-        Today's lesson: {this.props.lesson}
-        </div>
+          <div className='box' id='lesson'>
+        Lesson Objective: {this.props.lesson}
+          </div>
 
-        <div className='content' id='activity'>
-        Today's activity: {this.props.activity}
-        </div>
+          <div className='box' id='activity'>
+        Activity: {this.props.activity}
+          </div>
 
-        <div className='content' id='exit'>
-        Exit: {this.props.exit}
+          <div className='box' id='exit'>
+        Closure: {this.props.exit}
+          </div>
         </div>
       </div>
 

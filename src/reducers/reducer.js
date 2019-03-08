@@ -13,7 +13,7 @@ const initialState = {
     activity: { task: 'a\na\na', done: false },
     exit: { task: 'a', done: false }
   },
-  restroom: true
+  restroom: false
 }
 
 const agendaReducer = (state = initialState, action) => {
