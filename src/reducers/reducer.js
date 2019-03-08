@@ -3,7 +3,7 @@ const initialState = {
   student: [
     { name: 'Johnny Bravo', attendance: true, question: { hasQuestion: true, text: 'help' } },
     { name: 'Suzy Cue', attendance: true, question: { hasQuestion: false, text: '' } },
-    { name: 'Audy Arandela', attendance: true, question: { hasQuestion: false, text: '' } },
+    { name: 'Audy Arandela', attendance: true, question: { hasQuestion: true, text: '' } },
     { name: 'Lee Arnold', attendance: true, question: { hasQuestion: true, text: 'help' } }
   ],
   agenda: {
