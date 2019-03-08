@@ -18,6 +18,7 @@ export default class RosterTableRow extends Component {
   }
 
   render () {
+    console.log('get render', this.props)
     const { data, index, name,
       requestRR, handleNoRequest,
       handleYesRequest, restroom
@@ -28,7 +29,8 @@ export default class RosterTableRow extends Component {
           ? <RosterTableQuestion
             text={data.question.text}
             index={index}
-            name={name} /> : <td />}
+            name={name}
+            hasQuestion={data.question.hasQuestion} /> : <td />}
         {restroom ? <RosterTableRestroomRequest
           requestRR={requestRR}
           handleNoRequest={handleNoRequest}
