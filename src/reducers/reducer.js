@@ -35,7 +35,7 @@ const agendaReducer = (state = initialState, action) => {
       }
     case 'DELETE_QUESTION':
       console.log(state.student[index].question)
-      let newState = { ...state }
+      let newState = JSON.parse(JSON.stringify(state))
       newState.student[index].question = { hasQuestion: answered, text: '' }
       return newState
     default:
