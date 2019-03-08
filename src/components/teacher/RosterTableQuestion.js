@@ -39,7 +39,8 @@ class RosterTableQuestion extends React.Component {
           {this.state.showModal ? <Modal text={this.props.text}
             name={this.props.name}
             close={this.handleCloseModal}
-            answeredBtn={this.handleAnsweredModal} /> : null}
+            answeredBtn={this.handleAnsweredModal}
+            hasQuestion={this.props.hasQuestion} /> : null}
         </td>
       </React.Fragment>
     )
