@@ -57,7 +57,7 @@ class RosterTable extends Component {
                     requestRR={this.state.requestRR}
                     handleNoRequest={this.handleNoRequest}
                     handleYesRequest={this.handleYesRequest}
-                    restroom={this.props.restroom} />
+                    restroom={data.restroom} />
                 </tr> : null)
             })}
           </tbody>
@@ -68,8 +68,7 @@ class RosterTable extends Component {
 }
 
 const mapStateToProps = (state, index) => ({
-  student: state.student,
-  restroom: state.restroom
+  student: state.student
 })
 
 const mapDispatchToProps = (dispatch) => ({
