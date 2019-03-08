@@ -26,16 +26,11 @@ class RosterTableQuestion extends React.Component {
     this.props.answered(false, this.props.index)
   }
 
-  componentDidUpdate (prevProps) {
-    console.log('componentdidUpdate')
-    console.log('prevProps', prevProps)
-  }
-
   render () {
     return (
       <React.Fragment>
         <td>
-          <button onClick={this.handleOpenModal} class='button is-danger is-small modal-button' data-target='modal-ter' aria-haspopup='true'>Question</button>
+          <button onClick={this.handleOpenModal} className='button is-danger is-small modal-button' data-target='modal-ter' aria-haspopup='true'>Question</button>
           {this.state.showModal ? <Modal text={this.props.text}
             name={this.props.name}
             close={this.handleCloseModal}

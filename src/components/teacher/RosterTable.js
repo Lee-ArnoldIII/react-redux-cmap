@@ -1,49 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RosterTableRow from './RosterTableRow'
+import RosterTableHeader from './RosterTableHeader'
 
 class RosterTable extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      requestRR: ''
+
     }
-    this.handleYesRequest = this.handleYesRequest.bind(this)
-    this.handleNoRequest = this.handleNoRequest.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleYesRequest (evt) {
-    console.log(evt.target.value)
-    this.setState({
-      requestRR: true
-    })
-  }
-
-  handleNoRequest (evt) {
-    console.log(evt.target.value)
-    this.setState({
-      requestRR: false
-    })
-  }
-
-  handleSubmit (evt) {
-    evt.preventDefault()
   }
 
   render () {
     return (
       <div className='column is-half'>
         <table className='table is-hoverable is-striped'>
-          <thead>
-            <tr>
-              <th title='Number'>#</th>
-              <th title='Name'>Name</th>
-              <th title='Status'>Status</th>
-              <th title='Restroom'>Restroom Request</th>
-            </tr>
-          </thead>
+          <RosterTableHeader />
           <tbody>
             {this.props.student.map((data, index) => {
               return (
@@ -54,11 +27,7 @@ class RosterTable extends Component {
                     name={data.name}
                     index={index}
                     data={data}
-                    requestRR={this.state.requestRR}
-                    handleNoRequest={this.handleNoRequest}
-                    handleYesRequest={this.handleYesRequest}
-                    restroom={this.props.restroom} />
-                </tr> : null)
+                    studentRequestRR={data.restroom.request} /> </tr> : null)
             })}
           </tbody>
         </table>
@@ -68,12 +37,7 @@ class RosterTable extends Component {
 }
 
 const mapStateToProps = (state, index) => ({
-  student: state.student,
-  restroom: state.restroom
+  student: state.student
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  // answered: (answered) => dispatch({ type: 'DELETE_QUESTION', answered })
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(RosterTable)
+export default connect(mapStateToProps)(RosterTable)
