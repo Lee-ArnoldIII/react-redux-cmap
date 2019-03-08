@@ -12,16 +12,9 @@ export default class RosterTableRow extends Component {
     }
   }
 
-  componentDidUpdate (prevProps) {
-    console.log('componentdidUpdate')
-    console.log('prevProps', prevProps)
-  }
-
   render () {
-    console.log('get render', this.props)
     const { data, index, name,
-      requestRR, handleNoRequest,
-      handleYesRequest, restroom
+      studentRequestRR
     } = this.props
     return (
       <React.Fragment>
@@ -31,10 +24,8 @@ export default class RosterTableRow extends Component {
             index={index}
             name={name}
             hasQuestion={data.question.hasQuestion} /> : <td />}
-        {restroom ? <RosterTableRestroomRequest
-          requestRR={requestRR}
-          handleNoRequest={handleNoRequest}
-          handleYesRequest={handleYesRequest}
+        {studentRequestRR ? <RosterTableRestroomRequest
+          index={index}
         /> : null}
       </React.Fragment>
     )
