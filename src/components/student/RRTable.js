@@ -6,9 +6,11 @@ class RRTable extends Component {
       <div>
         <table className='table is-striped'>
           <thead>
-            <th>#</th>
-            <th>Name</th>
-            <th>Status</th>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Status</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
