@@ -8,29 +8,8 @@ class RosterTable extends Component {
     super(props)
 
     this.state = {
-      requestRR: ''
+
     }
-    this.handleYesRequest = this.handleYesRequest.bind(this)
-    this.handleNoRequest = this.handleNoRequest.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleYesRequest (evt) {
-    console.log(evt.target.value)
-    this.setState({
-      requestRR: true
-    })
-  }
-
-  handleNoRequest (evt) {
-    console.log(evt.target.value)
-    this.setState({
-      requestRR: false
-    })
-  }
-
-  handleSubmit (evt) {
-    evt.preventDefault()
   }
 
   render () {
@@ -48,10 +27,7 @@ class RosterTable extends Component {
                     name={data.name}
                     index={index}
                     data={data}
-                    requestRR={this.state.requestRR}
-                    handleNoRequest={this.handleNoRequest}
-                    handleYesRequest={this.handleYesRequest}
-                    restroom={data.restroom} /> </tr> : null)
+                    studentRequestRR={data.restroom.request} /> </tr> : null)
             })}
           </tbody>
         </table>

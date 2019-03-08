@@ -26,11 +26,6 @@ class RosterTableQuestion extends React.Component {
     this.props.answered(false, this.props.index)
   }
 
-  componentDidUpdate (prevProps) {
-    console.log('componentdidUpdate')
-    console.log('prevProps', prevProps)
-  }
-
   render () {
     return (
       <React.Fragment>
