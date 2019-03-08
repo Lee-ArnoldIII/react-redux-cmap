@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RosterTableRow from './RosterTableRow'
 
-
 class RosterTable extends Component {
   constructor (props) {
     super(props)
@@ -46,28 +45,21 @@ class RosterTable extends Component {
             </tr>
           </thead>
           <tbody>
-            
-           {this.props.student.map((data, index) => {
-             return (
-
-              data.attendance ? <tr key={index}>
-                                  <th>{index + 1}</th>
-                                  <td>{data.name}</td>
-                                  <RosterTableRow
-                                    data={data}
-                                    requestRR={this.state.requestRR}
-                                    handleNoRequest={this.handleNoRequest}
-                                    handleYesRequest={this.handleYesRequest}
-                                    restroom={this.props.restroom}/>
-                                  </tr> 
-                                  : null
-
-                                 
-            )
-             
-             
-           })}
-           
+            {this.props.student.map((data, index) => {
+              return (
+                data.attendance ? <tr key={index}>
+                  <th>{index + 1}</th>
+                  <td>{data.name}</td>
+                  <RosterTableRow
+                    name={data.name}
+                    index={index}
+                    data={data}
+                    requestRR={this.state.requestRR}
+                    handleNoRequest={this.handleNoRequest}
+                    handleYesRequest={this.handleYesRequest}
+                    restroom={this.props.restroom} />
+                </tr> : null)
+            })}
           </tbody>
         </table>
       </div>
@@ -75,15 +67,13 @@ class RosterTable extends Component {
   }
 }
 
-const mapStateToProps = (state, index) => {
-  return {
-    student: state.student,
-    restroom: state.restroom
-  }
-}
+const mapStateToProps = (state, index) => ({
+  student: state.student,
+  restroom: state.restroom
+})
 
 const mapDispatchToProps = (dispatch) => ({
-
+  // answered: (answered) => dispatch({ type: 'DELETE_QUESTION', answered })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RosterTable)

@@ -1,10 +1,10 @@
 // Populate with temporary data
 const initialState = {
   student: [
-    { name: 'Johnny Bravo', attendance: true, question: { hasQuestion: true, text: 'help'} },
-    { name: 'Suzy Cue', attendance: true, question: { hasQuestion: false, text: ''} },
-    { name: 'Audy Arandela', attendance: false, question: { hasQuestion: true, text: ''} },
-    { name: 'Lee Arnold', attendance: true, question: { hasQuestion: true, text: 'help'} }
+    { name: 'Johnny Bravo', attendance: true, question: { hasQuestion: true, text: 'help' } },
+    { name: 'Suzy Cue', attendance: true, question: { hasQuestion: false, text: '' } },
+    { name: 'Audy Arandela', attendance: true, question: { hasQuestion: false, text: '' } },
+    { name: 'Lee Arnold', attendance: true, question: { hasQuestion: true, text: 'help' } }
   ],
   agenda: {
     warmUp: { task: '', done: false },
@@ -19,7 +19,8 @@ const agendaReducer = (state = initialState, action) => {
   // Add more cases (delete, toggleRR, adding student, etc..)
   // Or add different reducers (student/attendance, restroom)
   console.log('action in reducer', action)
-  const { warmUpText, lessonText, activityText, exitText } = action
+  const { warmUpText, lessonText, activityText,
+    exitText, answered, index } = action
 
   switch (action.type) {
     case 'ADD_AGENDA':
@@ -32,7 +33,11 @@ const agendaReducer = (state = initialState, action) => {
           exit: { task: exitText, done: false }
         }
       }
-
+    case 'DELETE_QUESTION':
+      console.log(state.student[index].question)
+      let newState = { ...state }
+      newState.student[index].question = { hasQuestion: answered, text: '' }
+      return newState
     default:
       return state
   }
