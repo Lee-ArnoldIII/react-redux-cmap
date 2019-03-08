@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RosterTableRow from './RosterTableRow'
+import RosterTableHeader from './RosterTableHeader'
 
 class RosterTable extends Component {
   constructor (props) {
@@ -36,14 +37,7 @@ class RosterTable extends Component {
     return (
       <div className='column is-half'>
         <table className='table is-hoverable is-striped'>
-          <thead>
-            <tr>
-              <th title='Number'>#</th>
-              <th title='Name'>Name</th>
-              <th title='Status'>Status</th>
-              <th title='Restroom'>Restroom Request</th>
-            </tr>
-          </thead>
+          <RosterTableHeader />
           <tbody>
             {this.props.student.map((data, index) => {
               return (
@@ -57,8 +51,7 @@ class RosterTable extends Component {
                     requestRR={this.state.requestRR}
                     handleNoRequest={this.handleNoRequest}
                     handleYesRequest={this.handleYesRequest}
-                    restroom={data.restroom} />
-                </tr> : null)
+                    restroom={data.restroom} /> </tr> : null)
             })}
           </tbody>
         </table>
@@ -71,8 +64,4 @@ const mapStateToProps = (state, index) => ({
   student: state.student
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  // answered: (answered) => dispatch({ type: 'DELETE_QUESTION', answered })
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(RosterTable)
+export default connect(mapStateToProps)(RosterTable)
