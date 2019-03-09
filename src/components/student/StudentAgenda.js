@@ -11,7 +11,7 @@ class StudentAgenda extends Component {
   }
 
   render () {
-    console.log(this.props.item)
+    console.log(this.props)
     return (
       <div className='container is-fluid'>
         <div className='box'>
@@ -43,10 +43,10 @@ class StudentAgenda extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  warmUp: state.agenda.warmUp.task,
-  lesson: state.agenda.lesson.task,
-  activity: state.agenda.activity.task,
-  exit: state.agenda.exit.task
+  warmUp: state.teacher.agenda.warmUp.task,
+  lesson: state.teacher.agenda.lesson.task,
+  activity: state.teacher.agenda.activity.task,
+  exit: state.teacher.agenda.exit.task
 
 })
 
