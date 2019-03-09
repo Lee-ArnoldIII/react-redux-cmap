@@ -20,10 +20,10 @@ class StudentDashboard extends Component {
             <h2>Today's Agenda: </h2> <br />
             <StudentAgenda />
             <br />
-            <Requests />
-
           </div>
-          <div className='column' />
+          <div className='column is-half'>
+            <Requests />
+          </div>
         </div>
 
         <br />
