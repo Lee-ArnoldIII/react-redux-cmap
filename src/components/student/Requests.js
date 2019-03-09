@@ -11,11 +11,16 @@ class Requests extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleChange (evt) {
     console.log(evt.target.value)
     this.setState({ requestQuestion: evt.target.value })
+  }
+  handleClick (e) {
+    console.log('Student Requested Restroom Break')
+    this.props.restroomRequest()
   }
 
   handleSubmit (e) {
@@ -23,6 +28,8 @@ class Requests extends Component {
     // const { index } = this.props
     e.preventDefault()
     this.props.askQuestion(this.state.requestQuestion)
+    this.setState({ requestQuestion: 'thing 1' })
+    console.log(this.state.requestQuestion)
   }
 
   render () {
@@ -44,7 +51,7 @@ class Requests extends Component {
             <br />
             <div className='field is-grouped is-grouped-centered'>
               <p className='control'>
-                <a className='button is-danger' onClick={this.handleSubmit}>
+                <a className='button is-danger' onClick={this.handleClick}>
                   Restroom Break Needed
                 </a>
 
@@ -60,8 +67,9 @@ class Requests extends Component {
 }
 // Change code here for const mapStateToProps, connect()(Request), and anything else that is needed to run correctly
 const mapDispatchToProps = (dispatch) => ({
-  askQuestion: (requestQuestionText) =>
-    dispatch({ type: 'ASK_QUESTION', requestQuestionText })
+  askQuestion: (requestQuestionText) => dispatch({ type: 'ASK_QUESTION', requestQuestionText }),
+  restroomRequest: () => dispatch({ type: 'RR_REQUEST' })
+
 })
 
 export default connect(null, mapDispatchToProps)(Requests)
