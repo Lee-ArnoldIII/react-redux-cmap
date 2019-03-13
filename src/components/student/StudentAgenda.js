@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import AgendaToggle from './AgendaToggle'
 
 class StudentAgenda extends Component {
   constructor (props) {
@@ -9,6 +10,7 @@ class StudentAgenda extends Component {
 
     }
   }
+  //
 
   render () {
     console.log(this.props)
@@ -18,22 +20,23 @@ class StudentAgenda extends Component {
           <div className='box' id='warmUP'>
         W-U: {this.props.warmUp}
             <div className=''>
-              <label className='checkbox'>
-                <input type='checkbox' /> Done
-              </label>
+              <AgendaToggle />
             </div>
           </div>
 
           <div className='box' id='lesson'>
         Lesson Objective: {this.props.lesson}
+            <AgendaToggle />
           </div>
 
           <div className='box' id='activity'>
         Activity: {this.props.activity}
+            <AgendaToggle />
           </div>
 
           <div className='box' id='exit'>
         Closure: {this.props.exit}
+            <AgendaToggle />
           </div>
         </div>
       </div>
