@@ -34,10 +34,26 @@ const reducer = (state = initialState, action) => {
       let newStateQuestion = JSON.parse(JSON.stringify(state))
       newStateQuestion.student[index].question = { hasQuestion: answered, text: '' }
       return newStateQuestion
+
     case 'ACCEPT_RR':
       let newStateRR = JSON.parse(JSON.stringify(state))
       newStateRR.student[indexRR].restroom = { request: false, accepted }
       return newStateRR
+
+    case 'ASK_QUESTION':
+      let newStateAskQuestion = JSON.parse(JSON.stringify(state))
+      console.log(newStateAskQuestion)
+      console.log(action.studentIndex)
+      newStateAskQuestion.student[action.studentIndex].question = { hasQuestion: true, text: action.requestQuestionText }
+      return newStateAskQuestion
+
+    case 'RR_REQUEST':
+      let newStateRRRequest = JSON.parse(JSON.stringify(state))
+      newStateRRRequest.student[action.studentIndex].restroom = { request: true, accepted: '' }
+      return newStateRRRequest
+
+    case 'RR_REQUEST_RESET':
+      return { ...state, rrRequest: false }
     default:
       return state
   }
