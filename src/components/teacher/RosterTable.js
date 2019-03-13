@@ -20,7 +20,7 @@ class RosterTable extends Component {
           <tbody>
             {this.props.student.map((data, index) => {
               return (
-                data.attendance ? <tr key={index}>
+                  <tr key={index}>
                   <th>{index + 1}</th>
                   <td>{data.name}</td>
                   <RosterTableRow

@@ -23,10 +23,15 @@ class AgendaToggle extends Component {
   }
 
   render () {
+    const { title, label } = this.props
     return (
-      <div>
+      <div className='box'>
+        <div className='box' style={{ textDecoration: `${this.state.isToggleOn ? 'none' : 'line-through'}` }}>
+          {title}: {label}
+        </div>
+
         <button onClick={this.handleToggle}>
-          {this.state.isToggleOn ? 'Incomplete' : 'Done'}
+          {this.state.isToggleOn ? 'Done' : 'Undo'}
         </button>
       </div>
     )

@@ -16,28 +16,24 @@ class StudentAgenda extends Component {
     console.log(this.props)
     return (
       <div className='container is-fluid'>
-        <div className='box'>
-          <div className='box' id='warmUP'>
-        W-U: {this.props.warmUp}
-            <div className=''>
-              <AgendaToggle />
-            </div>
-          </div>
+        <div>
+          <AgendaToggle label={this.props.warmUp}
+            title='Warm Up' />
+        </div>
 
-          <div className='box' id='lesson'>
-        Lesson Objective: {this.props.lesson}
-            <AgendaToggle />
-          </div>
+        <div>
+          <AgendaToggle label={this.props.lesson}
+            title='Lesson Objective' />
+        </div>
 
-          <div className='box' id='activity'>
-        Activity: {this.props.activity}
-            <AgendaToggle />
-          </div>
+        <div>
+          <AgendaToggle label={this.props.activity}
+            title='Activity' />
+        </div>
 
-          <div className='box' id='exit'>
-        Closure: {this.props.exit}
-            <AgendaToggle />
-          </div>
+        <div>
+          <AgendaToggle label={this.props.exit}
+            title='Closure' />
         </div>
       </div>
 
