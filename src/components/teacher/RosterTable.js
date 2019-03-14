@@ -4,18 +4,10 @@ import RosterTableRow from './RosterTableRow'
 import RosterTableHeader from './RosterTableHeader'
 
 class RosterTable extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-
-    }
-  }
-
   render () {
     return (
       <div className='column is-half'>
-        <table className='table is-hoverable is-striped'>
+        <table className='table is-hoverable is-striped is-bordered'>
           <RosterTableHeader />
           <tbody>
             {this.props.student.map((data, index) => {
