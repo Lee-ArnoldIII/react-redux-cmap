@@ -11,9 +11,6 @@ class AgendaToggle extends Component {
     this.handleToggle = this.handleToggle.bind(this)
   }
 
-  // This needs to be worked so that when user toggles, it puts a line-through stytle add to the text in the agenda line.
-  // or this could update state locally and remove the item alltogether.
-
   handleToggle () {
     this.setState(state => ({
       isToggleOn: !state.isToggleOn,
