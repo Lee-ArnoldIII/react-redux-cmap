@@ -93,7 +93,7 @@ class AgendaFormContainer extends Component {
 
             <div className='field is-grouped is-grouped-centered'>
               <p className='control'>
-                <a className='button is-primary' onClick={this.handleSubmit}>
+                <a className='button is-info' onClick={this.handleSubmit}>
                       Submit
                 </a>
               </p>
