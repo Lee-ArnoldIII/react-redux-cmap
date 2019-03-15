@@ -1,7 +1,6 @@
 import db from '../database/db'
 
 const reducer = (state = db, action) => {
-
   const { warmUpText, lessonText, activityText,
     exitText, answered, index, accepted, indexRR } = action
 

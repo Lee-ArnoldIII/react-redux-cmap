@@ -12,6 +12,7 @@ const RosterTableRow = ({ data, index, name, studentRequestRR }) => {
           index={index}
           name={name}
           hasQuestion={data.question.hasQuestion} /> : <td />}
+
       {studentRequestRR ? <RosterTableRestroomRequest
         index={index}
       /> : null}
@@ -20,4 +21,3 @@ const RosterTableRow = ({ data, index, name, studentRequestRR }) => {
 }
 
 export default RosterTableRow
-
