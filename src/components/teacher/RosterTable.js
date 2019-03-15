@@ -29,7 +29,7 @@ class RosterTable extends Component {
 }
 
 const mapStateToProps = (state, index) => ({
-  student: state.teacher.student
+  student: state.student
 })
 
 export default connect(mapStateToProps)(RosterTable)

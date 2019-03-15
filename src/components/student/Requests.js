@@ -49,7 +49,7 @@ class Requests extends Component {
                 <option>Please Select Student....</option>
                 {this.props.student.map((data, index) => {
                   return (
-                    <option value={index}>{data.name}</option>
+                    <option key={index} value={index}>{data.name}</option>
                   )
                 }) }
               </select>
@@ -57,7 +57,7 @@ class Requests extends Component {
             <div className='field'>
               <label className='label'>Question</label>
               <div className='control'>
-                <input className='input' type='text' placeholder='What is your question?' onChange={this.handleChange} />
+                <input className='input' type='text' value={this.state.requestQuestion} placeholder='What is your question?' onChange={this.handleChange} />
                 <a className='button is-info' onClick={this.handleSubmit}>
                   Ask Question
                 </a>
@@ -91,7 +91,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 const mapStateToProps = (state) => ({
-  student: state.teacher.student
+  student: state.student
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Requests)

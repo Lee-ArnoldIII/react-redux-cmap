@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import StudentAgenda from './StudentAgenda'
-import RRTable from './RRTable'
+import StudentAgenda from './StudentAgendaContainer'
+import RRTable from './RRTableContainer'
 import Requests from './Requests.js'
 
 class StudentDashboard extends Component {
@@ -18,7 +18,7 @@ class StudentDashboard extends Component {
 
         <div className='columns'>
           <div className='column is-half'>
-            <h2>Today's Agenda: </h2>
+            <h2 className='has-text-centered'>Today's Agenda: </h2>
             <StudentAgenda />
           </div>
           <div className='column is-half'>
