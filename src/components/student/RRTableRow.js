@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Need to fix the index number in table
 const RRStatusTableRow = ({ name, index, status }) => {
   return (
     <React.Fragment>
