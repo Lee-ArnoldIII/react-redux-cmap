@@ -47,10 +47,10 @@ class RosterTableRestroomRequest extends Component {
                 onChange={this.handleNoRequest} />
                      &nbsp;&nbsp;No&nbsp;
             </label>
-            {this.state.requestRR === ''
-              ? <a onClick={this.handleSubmitRequest} className='button is-small is-rounded' disabled>Submit</a>
-              : <a onClick={this.handleSubmitRequest} className='button is-small is-rounded is-warning'>Submit</a>}
-
+            {this.state.requestRR === '' ? 
+              <a onClick={this.handleSubmitRequest} className='button is-small is-rounded' disabled>Submit</a> :
+              <a onClick={this.handleSubmitRequest} className='button is-small is-rounded is-warning'>Submit</a>}
+            
           </form>
         </td>
       </React.Fragment>

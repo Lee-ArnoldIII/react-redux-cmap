@@ -1,27 +1,36 @@
 import React, { Component } from 'react'
 
 export default class Date extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      date: new Date()
-    }
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     date: new Date()
+  //   }
+    
+  // }
 
-  currentTime () {
-    this.setState({
-      time: new Date()
-    })
-  }
+  // componentDidMount() {
+  //   this.timerID = setInterval(
+  //     () => this.tick(),
+  //     1000
+  //   )
+  // }
 
-  componentDidMount () {
-    setInterval(() => this.currentTime(), 1000)
-  }
+  // componentWillUnmount() {
+  //   clearInterval(this.timerID);
+  // }
 
-  render () {
+  // tick() {
+  //   this.setState({
+  //     date: new Date()
+  //   });
+  // }
+
+  render() {
+    
     return (
       <div className='section'>
-        <h2>{this.state.date.toLocalTimeString()}</h2>
+        <h2>It is .</h2>
       </div>
     )
   }
