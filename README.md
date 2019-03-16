@@ -26,4 +26,7 @@ This project created some challenges as each stage of the process was completed.
 * The Store - before doing any code, read the documentation about how to create a store and how it fits as a piece of the puzzle in the larger project. Mapping the store and key containers not only impacts syntactic structure, but also the semantic comprehension of a projects code.
 * Size and performance - creating smaller, reusable containers is the most powerful advantage of using react. When paired with redux, these duplicatable components increase performance and also reduce the challenges posed by increasing scale.
 
+## Acknowledgements
+* To the entire DC Houston Flex instructional team, thank you for the painstaking question-answer sessions, the tasty tacos, and your patience. We couldn't have done this without you guys. 
+
 
