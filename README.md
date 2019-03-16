@@ -3,8 +3,8 @@
 This project was created to fulfill the requirements for the Phase 3 React project for the Flex course at DigitalCrafts Houston. 
 
 # Team Members
-*Audy Arandela - audyarandela@gmail.com
-*Lee Arnold - lee.arnoldiii@gmail.com
+* Audy Arandela - audyarandela@gmail.com
+* Lee Arnold - lee.arnoldiii@gmail.com
 
 ## Purpose
 
@@ -13,10 +13,10 @@ The project is a base user interface (UI) structure for teachers and students to
 ## Technologies
 
 The following technologies were used to create this project
-*[React](https://reactjs.org) - A JavaScript libary for building user interfaces
-*[Redux](https://redux.js.org) - A predictable state container for JavaScript apps
-*[Bulma](https://bulma.io) - An open source CSS framework for clean and consistent styling
-*[Create React App](https://github.com/facebook/create-react-app) - A user-friendly library that makes creating react apps easier
+* [React](https://reactjs.org) - A JavaScript libary for building user interfaces
+* [Redux](https://redux.js.org) - A predictable state container for JavaScript apps
+* [Bulma](https://bulma.io) - An open source CSS framework for clean and consistent styling
+* [Create React App](https://github.com/facebook/create-react-app) - A user-friendly library that makes creating react apps easier
 
 ## Challenges and Lessons Learned
 
