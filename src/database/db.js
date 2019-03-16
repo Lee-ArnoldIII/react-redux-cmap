@@ -1,6 +1,6 @@
 const initialState = {
   student: [
-    { name: 'Johnny Bravo', attendance: true, restroom: { request: false, accepted: '' }, question: { hasQuestion: false, text: 'help' } },
+    { name: 'Johnny Bravo', attendance: true, restroom: { request: false, accepted: '', teacherAnswered: false }, question: { hasQuestion: false, text: 'help' } },
     { name: 'Suzy Cue', attendance: true, restroom: { request: false, accepted: '' }, question: { hasQuestion: false, text: '' } },
     { name: 'Audy Arandela', attendance: true, restroom: { request: false, accepted: '' }, question: { hasQuestion: false, text: '' } },
     { name: 'Lee Arnold', attendance: true, restroom: { request: false, accepted: '' }, question: { hasQuestion: false, text: 'help' } }

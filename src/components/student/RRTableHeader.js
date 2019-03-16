@@ -1,11 +1,10 @@
 import React from 'react'
 
-const RRStatusTableHeader = () => {
+const RRTableHeader = () => {
   return (
     <React.Fragment>
       <thead>
         <tr>
-          <th>#</th>
           <th>Name</th>
           <th>Status</th>
         </tr>
@@ -14,4 +13,4 @@ const RRStatusTableHeader = () => {
   )
 }
 
-export default RRStatusTableHeader
+export default RRTableHeader

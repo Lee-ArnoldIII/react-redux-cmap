@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-// Need to fix the index number in table
-const RRStatusTableRow = ({ name, index, status }) => {
-  return (
-    <React.Fragment>
-      {status ? <tr>
-        <td>{[]}</td>
-        <td>{name}</td>
-        <td>{status}</td>
-      </tr> : null}
+export default class RRTableRow extends Component {
+  componentDidUpdate (prevProps) {
+    console.log('prevProps', prevProps)
+  }
+  render () {
+    const { name, index, status, requested } = this.props
+    return (
+      <React.Fragment>
+        {requested ? <tr key={index}>
+          <td>{name}</td>
+          <td>{status}</td>
+        </tr> : null}
 
-    </React.Fragment>
-  )
+      </React.Fragment>
+    )
+  }
 }
-
-export default RRStatusTableRow
