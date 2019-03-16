@@ -3,8 +3,8 @@
 This project was created to fulfill the requirements for the Phase 3 React project for the Flex course at DigitalCrafts Houston. 
 
 # Team Members
-* Audy Arandela - audyarandela@gmail.com
-* Lee Arnold - lee.arnoldiii@gmail.com
+* [Audy Arandela](https://github.com/aarandela) - audyarandela@gmail.com
+* [Lee Arnold](https://github.com/Lee-ArnoldIII) - lee.arnoldiii@gmail.com
 
 ## Purpose
 
