@@ -6,7 +6,8 @@ class RosterTableRestroomRequest extends Component {
     super(props)
 
     this.state = {
-      requestRR: ''
+      requestRR: '',
+      teacherAnswered: false
     }
     this.handleYesRequest = this.handleYesRequest.bind(this)
     this.handleNoRequest = this.handleNoRequest.bind(this)
@@ -15,21 +16,18 @@ class RosterTableRestroomRequest extends Component {
 
   handleYesRequest (evt) {
     console.log(evt.target.value)
-    this.setState({ requestRR: true })
+    this.setState({ requestRR: 'Accepted', teacherAnswered: true })
   }
 
   handleNoRequest (evt) {
     console.log(evt.target.value)
-    this.setState({ requestRR: false })
+    this.setState({ requestRR: 'Denied', teacherAnswered: false })
   }
 
   handleSubmitRequest (evt) {
-    console.log('clicked')
-    const { index } = this.props
+    const { index, teacherAnswered } = this.props
     evt.preventDefault()
-    this.props.accepted(this.state.requestRR, index)
-    console.log(index)
-    console.log(this.state.requestRR)
+    this.props.accepted(this.state.requestRR, index, teacherAnswered)
   }
 
   render () {
@@ -59,10 +57,11 @@ class RosterTableRestroomRequest extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  accepted: (accepted, indexRR) => dispatch({
+  accepted: (accepted, indexRR, teacherAnswered) => dispatch({
     type: 'ACCEPT_RR',
     accepted,
-    indexRR
+    indexRR,
+    teacherAnswered
   })
 })
 

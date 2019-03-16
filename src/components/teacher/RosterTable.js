@@ -19,7 +19,7 @@ class RosterTable extends Component {
                     name={data.name}
                     index={index}
                     data={data}
-                    studentRequestRR={data.restroom.request} /> </tr> : null)
+                    studentRequestRR={data.restroom.teacherAnswered} /> </tr> : null)
             })}
           </tbody>
         </table>

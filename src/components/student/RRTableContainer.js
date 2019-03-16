@@ -16,7 +16,8 @@ class RRTable extends Component {
               return (
                 <RRTableRow index={index}
                   name={data.name}
-                  status={data.restroom.request} />
+                  requested={data.restroom.request}
+                  status={data.restroom.accepted} />
               )
             })}
           </tbody>
