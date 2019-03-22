@@ -23,16 +23,22 @@ class App extends Component {
 
   render () {
     return (
-      <section className='section'>
-        <div className='container'>
-          <Tabs
-            activeTab={this.state.activeTab}
-            changeTab={this.changeTab} />
+      <div>
 
-          {this.state.activeTab === 0 ? <StudentDashboard /> : null}
-          {this.state.activeTab === 1 ? <TeacherDashboard /> : null}
-        </div>
-      </section>
+        <section class='hero'>
+          <div class='hero-body'>
+            <div class='container'>
+              <h1 class='title'>
+        Welcome To CMAP
+              </h1>
+              <h2 class='subtitle'>
+        The Classroom Assistance Tool of Tomorrow
+              </h2>
+            </div>
+          </div>
+        </section>
+
+      </div>
     )
   }
 }
